@@ -39,6 +39,11 @@ type Query {
         year: Int!,
         semester: Semester!,
     ): [MultiMajor!]!
+
+    credits(
+        year: Int!,
+        semester: Semester!,
+    ): [Float!]!
 }
 
 input IntSectionQuery {

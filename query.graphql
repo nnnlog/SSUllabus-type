@@ -128,4 +128,9 @@ query currentSemesterData(
         detail_department
         isu_name
     }
+
+    credits(
+        year: $year,
+        semester: $semester
+    )
 }
