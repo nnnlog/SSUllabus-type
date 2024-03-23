@@ -1,0 +1,131 @@
+query subjects(
+    $year: Int!,
+    $semester: Semester!,
+
+    $grade_scale: [GradeScale!],
+    $grade_rule: [GradeRule!],
+
+    $lang: [Language!],
+
+    $is_el: Boolean,
+    $limited_target: Boolean,
+
+    $keyword: [String!],
+
+    $code: [String!],
+    #        name: [String!],
+    #        professor: [String!],
+    $bunban: [String!],
+    $open_department: [String!],
+
+    $credit: [Float!],
+    $listen_count: [IntSectionQuery!],
+    $remain_count: [IntSectionQuery!],
+
+    $process: [SubjectProcess!],
+    $target: [String!],
+
+    $majors: [String!],
+    $multi_majors: [String!],
+) {
+    subject(
+        year: $year,
+        semester: $semester,
+
+        grade_scale: $grade_scale,
+        grade_rule: $grade_rule,
+
+        lang: $lang,
+
+        is_el: $is_el,
+        limited_target: $limited_target,
+
+        keyword: $keyword,
+
+        code: $code,
+        #        name: [String!],
+        #        professor: [String!],
+        bunban: $bunban,
+        open_department: $open_department,
+
+        credit: $credit,
+        listen_count: $listen_count,
+        remain_count: $remain_count,
+
+        process:  $process,
+        target: $target,
+
+        majors: $majors,
+        multi_majors: $multi_majors,
+    ) {
+        year,
+        semester,
+
+        grade_scale,
+        grade_rule,
+
+        lang,
+
+        is_el,
+        limited_target,
+
+        code,
+        name,
+        bunban,
+        process,
+        open_department,
+
+        credit,
+        listen_count,
+        remain_count,
+
+        process,
+        target,
+
+        majors,
+        multi_majors,
+        time_place {
+            place
+            day
+            time_start
+            time_end
+        }
+    }
+}
+
+query subjectsSyllabus(
+    $year: Int!,
+    $semester: Semester!,
+    $code: [String!]!
+) {
+    subject(
+        year: $year,
+        semester: $semester,
+        code: $code,
+    ) {
+        syllabus,
+    }
+}
+
+query currentSemesterData(
+    $year: Int!,
+    $semester: Semester!,
+) {
+    major_lists(
+        year: $year,
+        semester: $semester
+    ) {
+        isu_name
+        is_main
+    }
+
+    multi_major_lists(
+        year: $year,
+        semester: $semester
+    ) {
+        univ
+        department
+        detail_department
+        isu_name
+    }
+}
