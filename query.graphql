@@ -107,6 +107,22 @@ query subjectsSyllabus(
     }
 }
 
+query subjectsSimple(
+    $year: Int!,
+    $semester: Semester!,
+    $code: [String!]!
+) {
+    subject(
+        year: $year,
+        semester: $semester,
+        code: $code,
+    ) {
+        code,
+        name,
+        professor,
+    }
+}
+
 query currentSemesterData(
     $year: Int!,
     $semester: Semester!,
