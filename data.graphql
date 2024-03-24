@@ -44,6 +44,12 @@ type Query {
         year: Int!,
         semester: Semester!,
     ): [Float!]!
+
+    lecture_room_timetable(
+        year: Int!,
+        semester: Semester!,
+        place: [String!]!,
+    ): [LectureRoomTimeTableGroup!]!
 }
 
 input IntSectionQuery {
@@ -80,7 +86,7 @@ type Subject {
 
     majors: [String!]!,
     multi_majors: [String!]!,
-    time_place: [TimePlaceDB_Subject!]
+    time_place: [SubjectLectureRoomTime!]
 }
 
 type SubjectMajor {
@@ -88,11 +94,23 @@ type SubjectMajor {
     is_main: Boolean!
 }
 
-type TimePlaceDB_Subject {
-    place: String,
-    day: String,
-    time_start: String,
-    time_end: String,
+type LectureRoomTimeTableGroup {
+    place: String!,
+    value: [LectureRoomTimeTable!]!,
+}
+
+type LectureRoomTimeTable {
+    code: String!,
+    day: String!,
+    time_start: String!,
+    time_end: String!,
+}
+
+type SubjectLectureRoomTime {
+    place: String!,
+    day: String!,
+    time_start: String!,
+    time_end: String!,
 }
 
 type MultiMajor {

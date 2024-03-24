@@ -134,3 +134,23 @@ query currentSemesterData(
         semester: $semester
     )
 }
+
+query lectureRoomTimeTable(
+    $year: Int!,
+    $semester: Semester!,
+    $place: [String!]!
+) {
+    lecture_room_timetable(
+        year: $year,
+        semester: $semester,
+        place: $place,
+    ) {
+        place,
+        value {
+            code
+            day
+            time_start
+            time_end
+        }
+    }
+}
