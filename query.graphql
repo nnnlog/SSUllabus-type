@@ -74,6 +74,7 @@ query subjects(
         bunban,
         process,
         open_department,
+        professor
 
         credit,
         listen_count,
