@@ -133,6 +133,11 @@ query currentSemesterData(
         year: $year,
         semester: $semester
     )
+
+    lecture_rooms(
+        year: $year,
+        semester: $semester,
+    )
 }
 
 query lectureRoomTimeTable(

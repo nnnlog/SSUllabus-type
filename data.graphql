@@ -50,6 +50,11 @@ type Query {
         semester: Semester!,
         place: [String!]!,
     ): [LectureRoomTimeTableGroup!]!
+
+    lecture_rooms(
+        year: Int!,
+        semester: Semester!
+    ): [String!]!
 }
 
 input IntSectionQuery {
