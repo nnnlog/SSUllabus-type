@@ -84,7 +84,7 @@ type Subject {
 }
 
 type SubjectMajor {
-    isu_name: String,
+    isu_name: String!,
     is_main: Boolean!
 }
 
