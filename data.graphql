@@ -112,7 +112,7 @@ type LectureRoomTimeTable {
 }
 
 type SubjectLectureRoomTime {
-    place: String!,
+    place: String,
     day: String!,
     time_start: String!,
     time_end: String!,
