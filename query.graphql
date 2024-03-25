@@ -104,6 +104,7 @@ query subjectsSyllabus(
         semester: $semester,
         code: $code,
     ) {
+        code,
         syllabus,
     }
 }
