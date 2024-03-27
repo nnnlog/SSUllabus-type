@@ -8,6 +8,7 @@ query subjects(
     $lang: [Language!],
 
     $is_el: Boolean,
+    $is_capstone: Boolean,
     $limited_target: Boolean,
 
     $keyword: [String!],
@@ -38,6 +39,7 @@ query subjects(
         lang: $lang,
 
         is_el: $is_el,
+        is_capstone: $is_capstone,
         limited_target: $limited_target,
 
         keyword: $keyword,
@@ -67,6 +69,7 @@ query subjects(
         lang,
 
         is_el,
+        is_capstone,
         limited_target,
 
         code,

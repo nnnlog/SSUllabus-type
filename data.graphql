@@ -9,6 +9,7 @@ type Query {
         lang: [Language!],
 
         is_el: Boolean,
+        is_capstone: Boolean,
         limited_target: Boolean,
 
         keyword: [String!],
@@ -72,6 +73,7 @@ type Subject {
     lang: Language!,
 
     is_el: Boolean!,
+    is_capstone: Boolean!,
     limited_target: Boolean!,
 
     code: String!,
